@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import FocusTextBox from './Comonent/FocusTextBox';
 
 export default function App()
 {
   return(
-  console.log('Hi');
+    <div>
+  <FocusTextBox/>
+  </div>
   );
 };
