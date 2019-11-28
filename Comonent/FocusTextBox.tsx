@@ -8,11 +8,16 @@ export default class FocusTextBox extends Component{
       TextValue : ''
     };
     this.getValue = this.getValue.bind(this);
+    this.removeFocus = this.removeFocus.bind(this);
   };
 
   focusTextBox(event)
   {
     event.target.style.backgroundColor = "grey";
+  }
+  removeFocus(event)
+  {
+    event.target.style.backgroundColor = "white";
   }
   getValue(event)
   {
@@ -24,7 +29,7 @@ export default class FocusTextBox extends Component{
   {
     return(
       <div>
-      <input type="text" onFocus = {this.focusTextBox} onChange={this.getValue}/>
+      <input type="text" onFocus = {this.focusTextBox} onChange={this.getValue} onBlur ={this.removeFocus}/>
       <div>{this.state.TextValue}</div>
       </div>
     );
